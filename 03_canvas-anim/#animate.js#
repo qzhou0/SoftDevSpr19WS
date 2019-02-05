@@ -1,0 +1,37 @@
+//  -- Ray Onishi, Qian Zhou
+// SoftDev2 pd7
+// K #03: 
+// 2019-02-06
+
+
+c = document.getElementById("playground");
+ctx = c.getContext("2d");
+
+
+var circle=document.getElementById("circle");
+var stop = document.getElementById("stop");
+
+var clear = function(e){
+    ctx.clearRect( 0, 0, c.width, c.height );
+ 
+    ctx.beginPath();
+};
+
+var requestID;
+var radius=0;
+var growing=true;
+
+var draw=function(){
+    clear()draw);
+
+var stopIt=function(){
+    console.log(requestID);
+    window.cancelAnimationFrame(requestID);
+    
+};
+
+stop.addEventListener('click',stopIt);
+
+
+
+
