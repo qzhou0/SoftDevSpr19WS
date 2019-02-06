@@ -1,6 +1,6 @@
 // Smooth Sailing -- Ray Onishi, Qian Zhou
 // SoftDev2 pd7
-// K03 -- They lock us in the tower whenever we get caught
+// K04 -- What is it saving the screen from?
 // 2019-02-06
 
 
@@ -49,40 +49,37 @@ var draw=function(){
     //console.log(requestID);
 };
 
-
-
 circle.addEventListener( "click" , function(){
     window.cancelAnimationFrame(requestID);//making sure does not go double speed
     requestID=window.requestAnimationFrame(draw);
 });
 
+//stop
 var stopIt=function(){
     window.cancelAnimationFrame(requestID);
 };
 
 stop.addEventListener('click',stopIt);
 
-var rect = document.getElementById("rect");
-
-
+//k04
+var dvd = document.getElementById("dvd");
 
 var dvdLogoSetup=function(){
     window.cancelAnimationFrame(requestID);
-    var rectX,rectY,xVel,yVel;
-    var rectWidth=100;var rectHeight=50;    
-    rectX = Math.floor(Math.random()*(c.width-rectWidth));
-    rectY=Math.floor(Math.random()*(c.height-rectHeight));
+    
+    var rectWidth=100; var rectHeight=50;
+    
+    var rectX = Math.floor(Math.random()*(c.width-rectWidth));
+    var rectY=Math.floor(Math.random()*(c.height-rectHeight));
     console.log(rectX);
-    xVel=1;
-    yVel=1;
+    
+    var xVel=1;
+    var yVel=1;
 
     var logo=new Image();
     logo.src="logo_dvd.jpg"
-    //ctx.drawImage(rectX,rectY,logo);
-
-    
-    
-    var move = function(){
+        
+    var dvdLogo = function(){
 	window.cancelAnimationFrame(requestID);
 	clear();
 
@@ -97,11 +94,11 @@ var dvdLogoSetup=function(){
 	
 	rectX+=xVel;rectY+=yVel;
 	console.log(rectX);
-	requestID=window.requestAnimationFrame(move);
+	
+	requestID=window.requestAnimationFrame(dvdLogo);
     };
-    move();
     
+    dvdLogo();
 };
 
-
-rect.addEventListener('click',dvdLogoSetup);
+dvd.addEventListener('click',dvdLogoSetup);
