@@ -78,7 +78,7 @@ var dvdLogoSetup=function(){
 
     var logo=new Image();
     logo.src="logo_dvd.jpg"
-    ctx.drawImage(logo);
+    //ctx.drawImage(rectX,rectY,logo);
 
     
     
@@ -92,6 +92,7 @@ var dvdLogoSetup=function(){
 	if (rectY==0||rectY==c.height-rectHeight){
 	    yVel*=-1;
 	}
+	ctx.drawImage(logo,rectX,rectY,rectWidth,rectHeight);
 	//ctx.fillRect(rectX,rectY,rectWidth,rectHeight);
 	
 	rectX+=xVel;rectY+=yVel;
