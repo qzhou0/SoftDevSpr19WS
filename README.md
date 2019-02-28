@@ -11,4 +11,9 @@
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
-[Mongo db.collection.find()](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
+
+### Mongo
+
+[db.collection.find()](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
+
+[do mongo](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
