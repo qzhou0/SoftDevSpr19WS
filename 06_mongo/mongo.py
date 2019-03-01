@@ -1,3 +1,10 @@
+"""
+Qian Zhou
+SoftDev2 pd07
+K06 -- Yummy Mongo Py
+2019-02-28
+"""
+
 import pymongo
 
 SERVER_ADDR = "142.93.240.95"
