@@ -1,5 +1,6 @@
 import os
 
+import json
 import pymongo
 from flask import Flask, render_template, request, flash, redirect, url_for,session
 import util.mongo as mongo
@@ -44,6 +45,12 @@ def add_connection():
     db = connection.PinkMangoes
     collection =db.pokemons
 
+    collection.drop()
+    f=open('./data/pokedex.json','r')
+    fr=f.read()
+    f.close()
+    collection.insert_many(json.loads(fr))
+                           
     print(session['connected'])
     return redirect('/')
 
