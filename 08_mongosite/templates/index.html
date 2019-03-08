@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokemon Finder</title>
+</head>
+<body>
+	{% if connected %}
+		<h1>Connected!</h1>
+		<form action="/find" method="POST">
+			<label for="serac">Find by</label>
+			<select name="searchType">
+			  <option value="type">type</option>
+			  <option value="name">name</option>
+			</select>
+			<input type="text" name="query">
+			<button type="submit">Find</button>
+		</form>
+		{% if displayPokemon %}
+		<p>Results:</p>
+			<ul>
+			  {% for res in pokemons %}
+			  
+					<li>{{res['name']}} - ({{res['type']}}) - ({{res['height']}}/{{res['weight']}})</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<em><p>No pokemons to show here</p></em>
+		{% endif %}
+	{% else %}
+		<h1>You are not connected, please connect</h1>
+		<form action="/connect" method="POST">
+			<label for="ip">IP:</label>
+			<input type="text" id="ip" name="ip">
+			<button type="submit">Connect</button>
+		</form>
+	{% endif %}
+</body>
+</html>
