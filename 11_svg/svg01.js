@@ -8,10 +8,14 @@ K11 --  Ask Circles [Change || Die] ¡­While On The Go
 var pic = document.getElementById("vimage");
 var clear=document.getElementById("but_clear");
 var move = document.getElementById("ihuusthar");
+var ngaziwa=document.getElementById('ngaziwa');
+
+
 var hit = false;//global var to signal if need to make a new one
 var x=0,y=0;//global vars to signal if clicked a killing blow
 var stop=false;
 var requestID;
+var badarea=[];
 
 pic.addEventListener('click',function(e){
 
@@ -122,6 +126,22 @@ var veprim=function(){ //move
 	    children[i].setAttribute('vy',vy*parseInt(-1));
 	    //console.log("reverse?");
 	}
+	//console.log('aahaa');
+	//console.log(badarea.length);
+	for (j=0;j<badarea.length;j++){
+	    //console.log(badarea.length);
+	    var x0=parseInt(badarea[j][0]);
+	    var y0=parseInt(badarea[j][1]);
+	    var a2=Math.pow(x0-xc,2);
+	    var b2=Math.pow(y0-yc,2);
+	    //console.log('aahaa');
+	    if (Math.sqrt(a2+b2)<r){
+		children[i].setAttribute('vx',vx*parseInt(-1));
+		children[i].setAttribute('vy',vy*parseInt(-1));
+		console.log('asdsa');
+	    }
+	    
+	}
 	
 	vx =parseInt(children[i].getAttribute('vx'));
 	vy =parseInt(children[i].getAttribute('vy'));
@@ -136,3 +156,30 @@ var veprim=function(){ //move
     
     requestID=window.requestAnimationFrame(veprim);
 };
+
+
+ngaziwa.addEventListener('click',function(e){
+    children=pic.children
+    for (i = 0;i<children.length;i++){
+	if (Math.random()<.5){
+	    
+	    children[i].remove();
+	}
+	else if (Math.random()<.25){
+	    badarea.push([children[i].getAttribute('cx'),children[i].getAttribute('cy')]);
+	    children[i].setAttribute('vx',0);
+	    children[i].setAttribute('vy',0);
+	}
+	    
+
+	
+    }
+    if (move_click_counter==1){
+	move_click_counter+=1;
+	move_click_counter%=2;
+    }
+    window.cancelAnimationFrame(requestID);
+
+    
+});
+
