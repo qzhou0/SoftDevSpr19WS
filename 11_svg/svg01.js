@@ -35,6 +35,15 @@ pic.addEventListener('click',function(e){
 
 	c.addEventListener('click',function(e){
 	    if (c.getAttribute('fill')=='olive'){//if is already olive, remove
+		for (i=badarea.length-1;i>=0;i--){
+		    //console.log(badarea);
+		    //console.log(c.getAttribute('cx'));
+		    if (badarea[i][0]==c.getAttribute('cx') && badarea[i][1]== c.getAttribute('cy')){
+			badarea.splice(i,1);
+			//console.log(badarea);
+			break;
+		    }
+		}
 		c.remove();
 		var rect=pic.getBoundingClientRect();//random place
 		x = Math.random()*rect.width;//new location
@@ -72,13 +81,14 @@ clear.addEventListener('click',function(){
     for (i = 0;i<children.length;){
 	children[i].remove();
     }
+    badarea=[];
 });
 var move_click_counter=0;
 move.addEventListener('click',function(e){
 
-    move_click_counter+=1;
-    move_click_counter%=2;
-
+    //move_click_counter+=1;
+    //move_click_counter%=2;
+    move_click_counter=1;
 
     
     if (move_click_counter==1){
