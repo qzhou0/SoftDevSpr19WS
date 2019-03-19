@@ -19,3 +19,6 @@
 [do mongo](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
 
 [python](http://api.mongodb.com/python/current/tutorial.html)
+
+### Mongo 
+[d3 tutorials](https://github.com/d3/d3/wiki/Tutorials)
