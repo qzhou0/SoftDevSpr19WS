@@ -20,5 +20,5 @@
 
 [python](http://api.mongodb.com/python/current/tutorial.html)
 
-### Mongo 
+### d3 
 [d3 tutorials](https://github.com/d3/d3/wiki/Tutorials)
