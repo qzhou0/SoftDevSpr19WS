@@ -57,13 +57,13 @@ axes1.append("rect")
 	return (1-i)*width;
     });
 */
-chart.append("g").attr("tranform","translate(10,410)")
+chart.append("g").attr("transform","translate(10,410)")
     .append("rect")
     .attr("width",width)
     .attr("height",3);
 ///why is still at 10,10?
 
-chart.append("g").attr("tranform",function(d,i){return "translate(10,10)";})
+chart.append("g").attr("transform",function(d,i){return "translate(10,10)";})
     .append("rect")
         .attr("width",3)
         .attr("height",height);
