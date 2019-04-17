@@ -56,6 +56,9 @@ def traditionalquicksort(L,lo=None,hi=None):
     return L
 
 def quicksort(L,loop=False):
-    return "I have no idea"
+    #"fix quicksort"
+    if len(L)<=1:
+        return L
+    return quicksort([x for x in L[1:] if x<=L[0]])+ [L[0]] + quicksort([x for x in L[1:] if x>L[0]])
 print(quicksort([1,5,2,7,9,1,100,53,32],True))
 #print(traditionalquicksort([5,2,7,88,32,77,100,1]))
