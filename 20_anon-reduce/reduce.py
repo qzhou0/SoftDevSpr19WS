@@ -18,8 +18,11 @@ def getFrequency(word):
 def totalFrequency(words):
     # I don't think this will be able to get frequency of a phrase,e.g. 'how are you'
     words=words.lower().split()
-    frequencies=[[0,0]]+[ sum([n if w == words[n-1] else 0 for n in range(1,len(words)+1)]) for w in wordList]
-
+    
+    wlSet=[0]+[[wordList[i] for i in range(j,j+len(words))] for j in range(len(wordList)-len(words)+1)]
+    return reduce(lambda x,y: x+1 if y==words else x, wlSet)
+    #frequencies=[[0,0]]+[ sum([n if w == words[n-1] else 0 for n in range(1,len(words)+1)]) for w in wordList]
+    """
     #frequencies = [getFrequency(x.lower()) for x in words]#frequency of everyword in wordlist
     def trimdata(L):
         L=L[:]
@@ -46,6 +49,7 @@ def totalFrequency(words):
         return x
             
     return reduce(update, frequencies)[0]
+    """
 
 def mostFrequency():
     l = [{}] + wordList#first element is a dict
