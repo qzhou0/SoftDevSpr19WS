@@ -7,6 +7,7 @@
 
 * [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 
+[Virtual Env](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
 
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
