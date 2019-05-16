@@ -23,3 +23,8 @@
 
 ### d3 
 [d3 tutorials](https://github.com/d3/d3/wiki/Tutorials)
+
+## DO droplet
+[install](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04)
+
+Notes:2010-03-19
