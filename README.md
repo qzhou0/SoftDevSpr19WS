@@ -26,6 +26,7 @@
 
 ## DO droplet
 [install](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04)
+
 [mod_wsgi.so](https://tecadmin.net/install-apache-mod-wsgi-on-ubuntu-16-04-xenial/) Use -py3 for python3
 
 Notes:2010-02-13
